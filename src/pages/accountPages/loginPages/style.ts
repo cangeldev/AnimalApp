@@ -15,5 +15,8 @@ export default StyleSheet.create({
     },
     inputTitle: {
         color: "red"
+    },
+    linkText:{
+        color:"#f99935"
     }
 })
