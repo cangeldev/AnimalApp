@@ -2,6 +2,8 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import style from './style'
 import { CustomButton, CustomTxtInput, Divider } from '../../../components'
+import { AnotherLoginCard } from '../../../components/cards/anotherLoginCard'
+import { AnotherLoginList } from '../../../utils/helper'
 
 export const LoginPages = () => {
     return (
@@ -34,7 +36,17 @@ export const LoginPages = () => {
                 Forgot Password ?
             </Text>
             <Divider />
-            <Text>Don't have an account ? <Text style={style.linkText}>Register</Text></Text>
+            <View style={style.anotherLoginView}>
+                {
+                    AnotherLoginList.map((item) => <AnotherLoginCard key={item.id} list={item.value} />)
+                }
+            </View>
+            <Text>
+                Don't have an account ?
+                <Text style={style.linkText}>
+                    Register
+                </Text>
+            </Text>
         </View>
     )
 }

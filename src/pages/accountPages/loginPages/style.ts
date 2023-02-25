@@ -18,5 +18,12 @@ export default StyleSheet.create({
     },
     linkText:{
         color:"#f99935"
-    }
+    },
+    anotherLoginView: {
+        flexDirection: "row",
+        alignSelf: "center",
+        width: 200,
+        justifyContent: "space-around",
+        marginTop: 30,
+     },
 })
