@@ -1,0 +1,1 @@
+export { HomePages } from "./homePages"
