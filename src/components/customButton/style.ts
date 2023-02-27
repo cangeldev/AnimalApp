@@ -1,15 +1,16 @@
 import { StyleSheet } from "react-native"
-export default StyleSheet.create({
+import colors from "../../assets/colors/colors"
 
+export default StyleSheet.create({
     text: {
-        backgroundColor: "#f99935",
+        backgroundColor: colors.orange,
         borderRadius: 5,
         marginVertical: 10,
         marginHorizontal: 20,
         paddingVertical: 12,
-        color: "white",
+        color: colors.white,
         fontSize: 20,
-        fontWeight: "bold",
-        textAlign: "center"
+        textAlign: "center",
+        fontFamily: "OpenSans-Bold"
     },
 })

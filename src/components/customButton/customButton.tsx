@@ -8,7 +8,9 @@ interface ICustomButton {
 
 export const CustomButton: FC<ICustomButton> = ({ title }) => {
     return (
-        <TouchableOpacity onPress={() => { console.log("db") }}>
+        <TouchableOpacity
+            activeOpacity={0.6}
+            onPress={() => { console.log("db") }}>
             <Text
                 style={style.text}>
                 {title}

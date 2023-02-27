@@ -1,11 +1,14 @@
 import { StyleSheet } from "react-native"
-export default StyleSheet.create({
+import colors from "../../assets/colors/colors"
 
+export default StyleSheet.create({
     container: {
-        backgroundColor: "#f3f3f3",
+        backgroundColor: colors.txtInputBackGround,
         paddingHorizontal: 10,
         borderRadius: 5,
         marginVertical: 10,
-        marginHorizontal: 20
+        marginHorizontal: 20,
+        color: colors.black,
+        fontFamily: "OpenSans-Medium",
     }
 })

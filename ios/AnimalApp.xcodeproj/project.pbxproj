@@ -14,6 +14,13 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-AnimalApp-AnimalAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-AnimalApp-AnimalAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		5B5D1EEB9A2A432191C1191E /* HoboStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7B0AA4BD3C5540B39470A38E /* HoboStd.otf */; };
+		E3FAB2EBD87A4A3CACD11240 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23A5D21A708547DC858F9766 /* OpenSans-Bold.ttf */; };
+		6EA8DDDEB3604B06B5A7A9C9 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 192C9CDD4A6E47ED9A051414 /* OpenSans-ExtraBold.ttf */; };
+		1E2A1BA53EC84C14875E5C44 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E042C640D38B465DA11D5D4E /* OpenSans-Light.ttf */; };
+		EBB447A8C7FB45D3B68E78C9 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CE3729DF2BD4B6F81E91B51 /* OpenSans-Medium.ttf */; };
+		D268B90A35C34D9CBC7DBF79 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB6D351C79394AC8BE1A24F7 /* OpenSans-Regular.ttf */; };
+		175C5882F47344C5A6655D4B /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7663D0E9DFD47EDBEDD7009 /* OpenSans-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AnimalApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-AnimalApp-AnimalAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalApp-AnimalAppTests.release.xcconfig"; path = "Target Support Files/Pods-AnimalApp-AnimalAppTests/Pods-AnimalApp-AnimalAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		7B0AA4BD3C5540B39470A38E /* HoboStd.otf */ = {isa = PBXFileReference; name = "HoboStd.otf"; path = "../src/assets/fonts/HoboStd.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		23A5D21A708547DC858F9766 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../src/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		192C9CDD4A6E47ED9A051414 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-ExtraBold.ttf"; path = "../src/assets/fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E042C640D38B465DA11D5D4E /* OpenSans-Light.ttf */ = {isa = PBXFileReference; name = "OpenSans-Light.ttf"; path = "../src/assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0CE3729DF2BD4B6F81E91B51 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; name = "OpenSans-Medium.ttf"; path = "../src/assets/fonts/OpenSans-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DB6D351C79394AC8BE1A24F7 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../src/assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E7663D0E9DFD47EDBEDD7009 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBold.ttf"; path = "../src/assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +136,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				30D35630EF1A40CDB3C44611 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +162,21 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		30D35630EF1A40CDB3C44611 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				7B0AA4BD3C5540B39470A38E /* HoboStd.otf */,
+				23A5D21A708547DC858F9766 /* OpenSans-Bold.ttf */,
+				192C9CDD4A6E47ED9A051414 /* OpenSans-ExtraBold.ttf */,
+				E042C640D38B465DA11D5D4E /* OpenSans-Light.ttf */,
+				0CE3729DF2BD4B6F81E91B51 /* OpenSans-Medium.ttf */,
+				DB6D351C79394AC8BE1A24F7 /* OpenSans-Regular.ttf */,
+				E7663D0E9DFD47EDBEDD7009 /* OpenSans-SemiBold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +274,13 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				5B5D1EEB9A2A432191C1191E /* HoboStd.otf in Resources */,
+				E3FAB2EBD87A4A3CACD11240 /* OpenSans-Bold.ttf in Resources */,
+				6EA8DDDEB3604B06B5A7A9C9 /* OpenSans-ExtraBold.ttf in Resources */,
+				1E2A1BA53EC84C14875E5C44 /* OpenSans-Light.ttf in Resources */,
+				EBB447A8C7FB45D3B68E78C9 /* OpenSans-Medium.ttf in Resources */,
+				D268B90A35C34D9CBC7DBF79 /* OpenSans-Regular.ttf in Resources */,
+				175C5882F47344C5A6655D4B /* OpenSans-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
