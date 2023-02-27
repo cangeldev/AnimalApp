@@ -1,11 +1,11 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { LoginPages } from './src/pages/accountPages/loginPages'
+import { SigninPages } from './src/pages/accountPages/signinPages'
 
 export default function App() {
   return (
     <View style={{ flex: 1 }}>
-      <LoginPages />
+      <SigninPages />
     </View>
   )
 }
