@@ -2,12 +2,14 @@ import { View, Text, StatusBar } from 'react-native'
 import React from 'react'
 import style from './style'
 import { CustomButton } from '../../components'
-import Icon from 'react-native-vector-icons/AntDesign';
-import colors from '../../assets/colors/colors';
 import Lottie from 'lottie-react-native';
 import { PawsLottie, PetsLottie } from '../../assets';
+import { useNavigation } from '@react-navigation/native';
+import { LoginPages } from '../accountPages/loginPages';
+import { SigninPages } from '../accountPages/signinPages';
 
 export const SplashScreen = () => {
+    const navigation = useNavigation<any>();
     const Pets = PetsLottie
     const Paws = PawsLottie
     return (
@@ -42,12 +44,12 @@ export const SplashScreen = () => {
             <View style={style.buttonView}>
                 <CustomButton
                     title='Login'
-                    component='LoginPages'
+                    onClick={() => navigation.navigate(LoginPages)}
                 />
                 <CustomButton
                     title='Register Now'
                     theme='firstStyle'
-                    component='SigninPages'
+                    onClick={() => navigation.navigate(SigninPages)}
                 />
             </View>
         </View>
