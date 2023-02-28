@@ -1,13 +1,15 @@
 import { View, Text, StatusBar, Image } from 'react-native'
 import React from 'react'
-import { BackgroundPaw } from '../../../assets'
+import { BackgroundPaw, PawsLottie } from '../../../assets'
 import IconA from 'react-native-vector-icons/AntDesign';
 import colors from '../../../assets/colors/colors';
 import { CustomButton, CustomTxtInput } from '../../../components';
 import style from '../loginPages/style';
 import styles from './style';
+import Lottie from 'lottie-react-native';
 
 export const SigninPages = () => {
+    const Paws = PawsLottie
     return (
         <View style={style.container}>
             <StatusBar
@@ -33,9 +35,17 @@ export const SigninPages = () => {
                 <Text style={styles.title}>
                     Happy
                 </Text>
-                <Text style={[styles.title, styles.titlei]}>
-                    Paws
-                </Text>
+                <View>
+                    <Lottie
+                        style={style.pawsLottie}
+                        source={Paws}
+                        autoPlay
+                        loop={false}
+                    />
+                    <Text style={[styles.title, styles.titlei]}>
+                        Paws
+                    </Text>
+                </View>
             </View>
             <Text
                 style={style.inputTitle}>
