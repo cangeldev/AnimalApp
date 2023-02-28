@@ -1,4 +1,4 @@
-import { View, Text, StatusBar, Image } from 'react-native'
+import { View, Text, StatusBar, Image,TouchableOpacity } from 'react-native'
 import React from 'react'
 import { BackgroundPaw, PawsLottie } from '../../../assets'
 import IconA from 'react-native-vector-icons/AntDesign';
@@ -7,9 +7,11 @@ import { CustomButton, CustomTxtInput } from '../../../components';
 import style from '../loginPages/style';
 import styles from './style';
 import Lottie from 'lottie-react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export const SigninPages = () => {
     const Paws = PawsLottie
+    const navigation = useNavigation<any>();
     return (
         <View style={style.container}>
             <StatusBar
@@ -17,7 +19,8 @@ export const SigninPages = () => {
                 backgroundColor={"transparent"}
                 translucent
             />
-            <View style={style.BackView}>
+            <TouchableOpacity style={style.BackView}
+                onPress={() => navigation.goBack()}>
                 <IconA
                     name="left"
                     color={colors.black}
@@ -26,7 +29,7 @@ export const SigninPages = () => {
                 <Text style={style.backText}>
                     Back
                 </Text>
-            </View>
+            </TouchableOpacity>
             <Image
                 source={BackgroundPaw}
                 style={style.pawShape}
@@ -75,7 +78,7 @@ export const SigninPages = () => {
                 <Text style={style.linkText}>
                     Already have an account ?
                 </Text>
-                <Text style={style.linkRegister}>
+                <Text style={style.linkRegister} onPress={() => navigation.navigate("LoginPages")}>
                     Login
                 </Text>
             </View>

@@ -1,6 +1,7 @@
-import { View, Text, Image, StatusBar } from 'react-native'
+import { View, Text, Image, StatusBar, TouchableOpacity } from 'react-native'
 import React from 'react'
 import style from './style'
+import { useNavigation } from '@react-navigation/native';
 import Lottie from 'lottie-react-native';
 import { CustomButton, CustomTxtInput, Divider } from '../../../components'
 import { AnotherLoginCard } from '../../../components/cards/anotherLoginCard'
@@ -9,9 +10,9 @@ import { BackgroundPaw, PawsLottie } from '../../../assets'
 import IconA from 'react-native-vector-icons/AntDesign';
 import colors from '../../../assets/colors/colors'
 
-
 export const LoginPages = () => {
     const Paws = PawsLottie
+    const navigation = useNavigation<any>();
     return (
         <View style={style.container}>
             <StatusBar
@@ -69,11 +70,12 @@ export const LoginPages = () => {
                 <Text style={style.linkText}>
                     Don't have an account ?
                 </Text>
-                <Text style={style.linkRegister}>
+                <Text style={style.linkRegister} onPress={() => navigation.navigate("SigninPages")}>
                     Register
                 </Text>
             </View>
-            <View style={style.BackView}>
+            <TouchableOpacity style={style.BackView}
+                onPress={() => navigation.goBack()}>
                 <IconA
                     name="left"
                     color={colors.black}
@@ -82,7 +84,7 @@ export const LoginPages = () => {
                 <Text style={style.backText}>
                     Back
                 </Text>
-            </View>
+            </TouchableOpacity>
         </View>
     )
 }

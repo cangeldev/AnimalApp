@@ -7,11 +7,6 @@ export default StyleSheet.create({
         backgroundColor: colors.white,
         justifyContent: "center"
     },
-    quitIcon: {
-        position: "absolute",
-        top: 50,
-        right: 20
-    },
     titleView: {
         alignItems: "center",
         marginTop: 100
@@ -22,7 +17,8 @@ export default StyleSheet.create({
         fontSize: 65,
         marginLeft: -120
     },
-    titlei: {
+    titlei:
+    {
         marginTop: -20,
         marginLeft: 120,
         color: colors.pinkOne,

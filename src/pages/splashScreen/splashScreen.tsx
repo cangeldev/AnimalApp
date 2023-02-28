@@ -19,12 +19,6 @@ export const SplashScreen = () => {
                 barStyle={"dark-content"}
                 translucent
             />
-            <Icon
-                name="logout"
-                color={colors.black}
-                size={23}
-                style={style.quitIcon}
-            />
             <View style={style.titleView}>
                 <Text style={style.title}>
                     Happy
@@ -48,10 +42,12 @@ export const SplashScreen = () => {
             <View style={style.buttonView}>
                 <CustomButton
                     title='Login'
+                    component='LoginPages'
                 />
                 <CustomButton
                     title='Register Now'
                     theme='firstStyle'
+                    component='SigninPages'
                 />
             </View>
         </View>
