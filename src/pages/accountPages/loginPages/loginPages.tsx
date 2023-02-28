@@ -9,6 +9,7 @@ import { AnotherLoginList } from '../../../utils/helper'
 import { BackgroundPaw, PawsLottie } from '../../../assets'
 import IconA from 'react-native-vector-icons/AntDesign';
 import colors from '../../../assets/colors/colors'
+import { TabNavigator } from '../../../navigation';
 
 export const LoginPages = () => {
     const Paws = PawsLottie
@@ -56,6 +57,7 @@ export const LoginPages = () => {
             />
             <CustomButton
                 title='Login'
+                onClick={() => navigation.navigate(TabNavigator)}
             />
             <Text style={style.forgotPassword}>
                 Forgot Password ?
@@ -70,7 +72,8 @@ export const LoginPages = () => {
                 <Text style={style.linkText}>
                     Don't have an account ?
                 </Text>
-                <Text style={style.linkRegister} onPress={() => navigation.navigate("SigninPages")}>
+                <Text style={style.linkRegister}
+                    onPress={() => navigation.navigate("SigninPages")}>
                     Register
                 </Text>
             </View>

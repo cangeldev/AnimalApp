@@ -5,8 +5,7 @@ import { CustomButton } from '../../components'
 import Lottie from 'lottie-react-native';
 import { PawsLottie, PetsLottie } from '../../assets';
 import { useNavigation } from '@react-navigation/native';
-import { LoginPages } from '../accountPages/loginPages';
-import { SigninPages } from '../accountPages/signinPages';
+import { LoginPages, SigninPages, } from '../../pages'
 
 export const SplashScreen = () => {
     const navigation = useNavigation<any>();
