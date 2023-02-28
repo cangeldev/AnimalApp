@@ -22,7 +22,7 @@ export default StyleSheet.create({
     titlei: {
         marginTop: -30,
         marginLeft: 180,
-        color: "#d2647d",
+        color: colors.pinkOne,
     },
     inputTitle: {
         color: colors.black,
@@ -69,7 +69,11 @@ export default StyleSheet.create({
         position: 'absolute',
         top: 45,
         left: 10,
-        flexDirection: "row",       
-        alignItems:"center"
-    }
+        flexDirection: "row",
+        alignItems: "center"
+    },
+    pawsLottie: {
+        marginLeft: 60,
+        marginTop: -30
+    },
 })

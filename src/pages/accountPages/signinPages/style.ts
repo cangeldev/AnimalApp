@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native"
+import colors from "../../../assets/colors/colors"
 
 export default StyleSheet.create({
     title: {
         fontFamily: "HoboStd",
-        color: "#d2647d",
+        color: colors.pinkOne,
         fontSize: 65,
         marginTop: -10,
         marginLeft: 45,
