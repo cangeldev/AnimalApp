@@ -1,16 +1,20 @@
 import React from 'react'
 import { Image } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomePages, ProfilePages } from '../pages';
+import { HomePages, ProfilePages, ProfileSettingsPages } from '../pages';
 import { Hut, HutSelected, Profile, ProfileSelected } from '../assets';
+import IconE from 'react-native-vector-icons/Ionicons';
 import colors from '../assets/colors/colors';
+import { ProfileStackNavigator } from './stackNavigator';
+import { useNavigation } from '@react-navigation/native';
 
 export const TabNavigator = () => {
     const Tab = createBottomTabNavigator();
+    const navigation = useNavigation()
 
     return (
         <Tab.Navigator
-            initialRouteName='ProfilePages'
+            initialRouteName='ProfileStackNavigator'
             screenOptions={{
                 headerShown: false,
                 tabBarShowLabel: false
@@ -35,22 +39,9 @@ export const TabNavigator = () => {
                 }}
             />
             <Tab.Screen
-                name="ProfilePages"
-                component={ProfilePages}
-
-
+                name="ProfileStackNavigator"
+                component={ProfileStackNavigator}
                 options={{
-                  
-                    headerShown: true,
-                    headerTitleAlign: "center",
-                    headerTitle: "Profile",
-                    headerTintColor: colors.white,
-                    headerTitleStyle: {
-                        fontFamily: "OpenSans-Bold"
-                    },
-                    headerStyle: {
-                        backgroundColor: colors.headerBackground
-                    },
                     tabBarIcon: ({ focused }) => focused ?
                         <Image
                             source={ProfileSelected}
