@@ -3,13 +3,14 @@ import { Image } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomePages, ProfilePages } from '../pages';
 import { Hut, HutSelected, Profile, ProfileSelected } from '../assets';
+import colors from '../assets/colors/colors';
 
 export const TabNavigator = () => {
     const Tab = createBottomTabNavigator();
 
     return (
         <Tab.Navigator
-            initialRouteName='HomePages'
+            initialRouteName='ProfilePages'
             screenOptions={{
                 headerShown: false,
                 tabBarShowLabel: false
@@ -36,7 +37,20 @@ export const TabNavigator = () => {
             <Tab.Screen
                 name="ProfilePages"
                 component={ProfilePages}
+
+
                 options={{
+                  
+                    headerShown: true,
+                    headerTitleAlign: "center",
+                    headerTitle: "Profile",
+                    headerTintColor: colors.white,
+                    headerTitleStyle: {
+                        fontFamily: "OpenSans-Bold"
+                    },
+                    headerStyle: {
+                        backgroundColor: colors.headerBackground
+                    },
                     tabBarIcon: ({ focused }) => focused ?
                         <Image
                             source={ProfileSelected}

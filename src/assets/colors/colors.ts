@@ -4,4 +4,5 @@ export default {
     orange: "#f99935",
     txtInputBackGround: "#f3f3f3",
     pinkOne: "#d2647d",
+    headerBackground: "#8d1950",
 }

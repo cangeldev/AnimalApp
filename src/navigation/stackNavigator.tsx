@@ -6,7 +6,9 @@ import { TabNavigator } from './tabNavigator'
 export const StackNavigator = () => {
     const Stack = createNativeStackNavigator()
     return (
-        <Stack.Navigator initialRouteName='SplashScreen' screenOptions={{ headerShown: false }}>
+        <Stack.Navigator
+            initialRouteName='TabNavigator'
+            screenOptions={{ headerShown: false }}>
             <Stack.Screen
                 name='SplashScreen'
                 component={SplashScreen}
