@@ -1,23 +1,29 @@
 import React from 'react'
 import { Image } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomePages, ProfilePages, ProfileSettingsPages } from '../pages';
+import { HomePages } from '../pages';
 import { Hut, HutSelected, Profile, ProfileSelected } from '../assets';
-import IconE from 'react-native-vector-icons/Ionicons';
-import colors from '../assets/colors/colors';
 import { ProfileStackNavigator } from './stackNavigator';
-import { useNavigation } from '@react-navigation/native';
+import colors from '../assets/colors/colors';
+import IconE from 'react-native-vector-icons/Ionicons';
 
 export const TabNavigator = () => {
     const Tab = createBottomTabNavigator();
-    const navigation = useNavigation()
-
     return (
         <Tab.Navigator
-            initialRouteName='ProfileStackNavigator'
+            initialRouteName='HomePages'
             screenOptions={{
                 headerShown: false,
-                tabBarShowLabel: false
+                tabBarShowLabel: false,
+                headerTitle: "Home",
+                headerRight: () => (
+                    <IconE
+                        name="notifications"
+                        color={colors.white}
+                        size={20}
+                        style={{ marginRight: 20 }}
+                        onPress={() => null}
+                    />)
             }}>
             <Tab.Screen
                 name="HomePages"
@@ -36,6 +42,15 @@ export const TabNavigator = () => {
                                 width: 28,
                                 height: 28,
                             }} />,
+                    headerShown: true,
+                    headerTitleAlign: "center",
+                    headerTintColor: colors.white,
+                    headerTitleStyle: {
+                        fontFamily: "OpenSans-Bold"
+                    },
+                    headerStyle: {
+                        backgroundColor: colors.headerBackground
+                    },
                 }}
             />
             <Tab.Screen

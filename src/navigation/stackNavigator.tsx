@@ -33,36 +33,47 @@ export const StackNavigator = () => {
 }
 
 export function ProfileStackNavigator() {
-    const navigation = useNavigation()
+    const navigation = useNavigation<any>();
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator screenOptions={{
+            headerShown: true,
+            headerTitleAlign: "center",
+            headerTintColor: colors.white,
+            headerTitleStyle: {
+                fontFamily: "OpenSans-Bold"
+            },
+            headerStyle: {
+                backgroundColor: colors.headerBackground
+            },
+        }}>
             <Stack.Screen
                 name="ProfilePages"
                 component={ProfilePages}
                 options={{
-                    headerShown: true,
-                    headerTitleAlign: "center",
                     headerTitle: "Profile",
-                    headerTintColor: colors.white,
-                    headerTitleStyle: {
-                        fontFamily: "OpenSans-Bold"
-                    },
-                    headerStyle: {
-                        backgroundColor: colors.headerBackground
-                    },
                     headerRight: () => (
                         <IconE
                             name="md-settings-outline"
                             color={colors.white}
                             size={20}
                             style={{ marginRight: 20 }}
-                            onPress={() => navigation.navigate(ProfileSettingsPages)}
-                        />),
+                            onPress={() => navigation.navigate("ProfileSettingsPages")}
+                        />)
                 }}
             />
             <Stack.Screen
                 name="ProfileSettingsPages"
                 component={ProfileSettingsPages}
+                options={{
+                    headerTitle: "Profile Settings",
+                    headerLeft: () => (
+                        <IconE
+                            name="chevron-back"
+                            color={colors.white}
+                            size={24}
+                            onPress={() => navigation.navigate("ProfilePages")}
+                        />)
+                }}
             />
         </Stack.Navigator>
     )
