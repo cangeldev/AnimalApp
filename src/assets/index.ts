@@ -8,6 +8,8 @@ export const HutSelected = require("./images/hutSelected.png");
 export const Hut = require("./images/hut.png");
 export const Cat = require("./images/cat.jpg");
 export const BackShape = require("./images/backShape.png");
+export const Paw = require("./images/paw.png");
+export const PawSelected = require("./images/pawSelected.png");
 export const PetsLottie = require("./images/pets.json")
 export const PawsLottie = require("./images/paw.json")
 
