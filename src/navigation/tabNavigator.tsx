@@ -57,7 +57,7 @@ export const TabNavigator = () => {
                 name="PetsPages"
                 component={PetsPages}
                 options={{
-                    headerTitle: "Pets",
+                    headerTitle: "Our Members",
                     tabBarIcon: ({ focused }) => focused ?
                         <Image
                             source={PawSelected}
@@ -74,10 +74,12 @@ export const TabNavigator = () => {
                     headerShown: true,
                     headerTitleAlign: "center",
                     headerTintColor: colors.white,
-                    headerTitleStyle: {
+                    headerTitleStyle:
+                    {
                         fontFamily: "OpenSans-Bold"
                     },
-                    headerStyle: {
+                    headerStyle:
+                    {
                         backgroundColor: colors.headerBackground
                     },
                 }}

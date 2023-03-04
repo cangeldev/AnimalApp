@@ -1,3 +1,5 @@
 export { AnotherLoginCard } from "./anotherLoginCard/index"
 export { ProfileMyPetsCard } from "./profileMyPetsCard/index"
 export { ProfileSettingsPageCard } from "./profileSettingsPageCard/index"
+export { PostCard } from "./postCard/index"
+export { MembersCard } from "./membersCard/index"
