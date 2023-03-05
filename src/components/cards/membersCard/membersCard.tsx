@@ -1,5 +1,5 @@
 import { View, Text, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Cat } from '../../../assets'
 import style from './style'
 import colors from '../../../assets/colors/colors'
@@ -8,6 +8,7 @@ import IconE from 'react-native-vector-icons/Entypo';
 import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export const MembersCard = () => {
+    const [like, setLike] = useState(false)
     return (
         <View style={style.container}>
             <Image
@@ -16,10 +17,10 @@ export const MembersCard = () => {
             />
             <View style={style.heart}>
                 <IconA
-                    name="hearto"
-                    color={colors.black}
+                    name={like ? "heart" : "hearto"}
+                    color={like ? colors.red : colors.black}
                     size={20}
-                    onPress={() => null}
+                    onPress={() => setLike(!like)}
                 />
             </View>
             <View style={style.infoView}>

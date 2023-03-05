@@ -1,5 +1,5 @@
 import { View, Text, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import style from './style'
 import { Cat } from '../../../assets'
 import colors from '../../../assets/colors/colors'
@@ -7,6 +7,7 @@ import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconA from 'react-native-vector-icons/AntDesign';
 
 export const PostCard = () => {
+    const [like, setLike] = useState(false)
     return (
         <View style={style.container}>
             <View style={style.innerContainer}>
@@ -34,10 +35,10 @@ export const PostCard = () => {
             />
             <View style={style.heart}>
                 <IconA
-                    name="hearto"
-                    color={colors.black}
+                    name={like ? "heart" : "hearto"}
+                    color={like ? colors.red : colors.black}
                     size={20}
-                    onPress={() => null}
+                    onPress={() => setLike(!like)}
                 />
             </View>
         </View>
