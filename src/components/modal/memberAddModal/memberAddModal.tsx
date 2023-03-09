@@ -5,7 +5,7 @@ import { Cat } from '../../../assets';
 import colors from '../../../assets/colors/colors';
 import style from './style';
 import IconA from 'react-native-vector-icons/AntDesign';
-import { CustomInputView, RadioButtonGroup, DatePickers, CustomButton } from '../../../components';
+import { CustomInputView, RadioButtonGroupGender, DatePickers, CustomButton, RadioButtonGroupWeight } from '../../../components';
 
 interface IModal {
     visible: boolean
@@ -41,7 +41,8 @@ export const MemberAddModal: FC<IModal> = ({ visible, onClick }) => {
                 <CustomInputView title='Genus:' />
                 <CustomInputView title='Age Status:' />
                 <DatePickers />
-                <RadioButtonGroup />
+                <RadioButtonGroupGender />
+                <RadioButtonGroupWeight />
                 <View style={style.butonView}>
                     <CustomButton title='Add' />
                 </View>

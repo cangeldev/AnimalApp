@@ -5,6 +5,7 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.white,
+        paddingTop: 10
     },
     imageView: {
         margin: 20,
@@ -61,5 +62,8 @@ export default StyleSheet.create({
     petsListView: {
         flexDirection: "row",
         overflow: "scroll"
+    },
+    dateView: {
+        marginVertical: 5
     }
 })

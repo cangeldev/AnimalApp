@@ -4,6 +4,7 @@ import style from './style'
 import IconA from 'react-native-vector-icons/Entypo';
 import { Cat } from '../../assets';
 import { ProfileSettingsPageCard } from '../../components/cards';
+import { DatePickers, RadioButtonGroupGender } from '../../components';
 
 export const ProfileSettingsPages = () => {
     return (
@@ -32,13 +33,30 @@ export const ProfileSettingsPages = () => {
                     </View>
                 </View>
             </View>
-            <ProfileSettingsPageCard title='Name:' value='Can Gel' />
-            <ProfileSettingsPageCard title='Email:' value='example@gmail.com' />
-            <ProfileSettingsPageCard title='Password:' placeholder='**********' />
-            <ProfileSettingsPageCard title='Adress' value='Düzce' />
-            <ProfileSettingsPageCard title='Birthday' value='15.03.1998' />
-            <ProfileSettingsPageCard title='Gender' placeholder='Male' />
-            <ProfileSettingsPageCard title='Telephone' value='+90 0500 123 23 11' />
+            <ProfileSettingsPageCard
+                title='Name:'
+                value='Can Gel'
+            />
+            <ProfileSettingsPageCard
+                title='Email:'
+                value='example@gmail.com'
+            />
+            <ProfileSettingsPageCard
+                title='Password:'
+                placeholder='**********'
+            />
+            <ProfileSettingsPageCard
+                title='Adress'
+                value='Düzce'
+            />
+            <View style={style.dateView}>
+                <DatePickers />
+            </View>
+            <RadioButtonGroupGender />
+            <ProfileSettingsPageCard
+                title='Telephone'
+                value='+90 0500 123 23 11'
+            />
         </View>
     )
 }

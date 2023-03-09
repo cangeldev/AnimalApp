@@ -6,7 +6,7 @@ export default StyleSheet.create({
         marginHorizontal: 20,
         marginRight: 25,
         justifyContent: "center",
-        marginTop: 25
+        marginTop: 30
     },
     txtInput: {
         paddingBottom: 7,
