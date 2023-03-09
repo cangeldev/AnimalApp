@@ -4,7 +4,7 @@ import colors from "../../../assets/colors/colors"
 export default StyleSheet.create({
     modal: {
         backgroundColor: "white",
-        margin: 0,
+        marginTop: 155
     },
     container: {
         flex: 1,
@@ -17,7 +17,7 @@ export default StyleSheet.create({
     },
     imageView:
     {
-        marginTop: 25,
+        marginTop: 15,
         alignSelf: "center",
     },
     image: {
@@ -37,5 +37,8 @@ export default StyleSheet.create({
         padding: 7,
         borderRadius: 20
     },
+    butonView: {
+        marginTop: 10
+    }
 
 })

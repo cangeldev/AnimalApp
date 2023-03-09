@@ -14,10 +14,10 @@ export const RadioButtonGroup = () => {
             color: "#00a8ff",
             labelStyle: {
                 color: colors.black,
-                marginLeft: 6
+                marginLeft: 6,
+                fontFamily: "OpenSans-Regular",
             }
         },
-
         {
             id: '2',
             label: 'Female',
@@ -26,7 +26,46 @@ export const RadioButtonGroup = () => {
             color: "#ff8ab7",
             labelStyle: {
                 color: colors.black,
-                marginLeft: 6
+                marginLeft: 6,
+                fontFamily: "OpenSans-Regular",
+            }
+        }
+    ]);
+    const [radioButtonsWeight, setRadioButtonsWeight] = useState([
+        {
+            id: '1',
+            label: 'Light',
+            value: 'Light',
+            size: 20,
+            color: colors.black,
+            labelStyle: {
+                color: colors.black,
+                marginLeft: 6,
+                fontFamily: "OpenSans-Regular",
+            }
+        },
+        {
+            id: '2',
+            label: 'Medium',
+            value: 'Medium',
+            size: 20,
+            color: colors.black,
+            labelStyle: {
+                color: colors.black,
+                marginLeft: 6,
+                fontFamily: "OpenSans-Regular",
+            }
+        },
+        {
+            id: '3',
+            label: 'Fat',
+            value: 'Fat',
+            size: 20,
+            color: colors.black,
+            labelStyle: {
+                color: colors.black,
+                marginLeft: 6,
+                fontFamily: "OpenSans-Regular",
             }
         }
     ]);
@@ -34,15 +73,28 @@ export const RadioButtonGroup = () => {
     function onPressRadioButton(radioButtonsArray: any) {
         setRadioButtons(radioButtonsArray);
     }
+    function onPressRadioButtonWeight(radioButtonsArray: any) {
+        setRadioButtonsWeight(radioButtonsArray);
+    }
 
     return (
-        <View style={style.container}>
-            <Text style={style.text}>Gender:</Text>
-            <RadioGroup
-                containerStyle={style.radioGroupView}
-                radioButtons={radioButtons}
-                onPress={onPressRadioButton}
-            />
+        <View>
+            <View style={style.container}>
+                <Text style={style.text}>Gender:</Text>
+                <RadioGroup
+                    containerStyle={style.radioGroupView}
+                    radioButtons={radioButtons}
+                    onPress={onPressRadioButton}
+                />
+            </View>
+            <View style={style.container}>
+                <Text style={style.text}>Weight: </Text>
+                <RadioGroup
+                    containerStyle={style.radioGroupView}
+                    radioButtons={radioButtonsWeight}
+                    onPress={onPressRadioButtonWeight}
+                />
+            </View>
         </View>
     )
 }

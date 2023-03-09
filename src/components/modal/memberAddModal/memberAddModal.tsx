@@ -1,20 +1,17 @@
-import { View, Image, Text, TextInput } from 'react-native'
+import { View, Image } from 'react-native'
 import React, { FC } from 'react'
-import IconI from 'react-native-vector-icons/Ionicons';
 import Modal from "react-native-modal";
 import { Cat } from '../../../assets';
 import colors from '../../../assets/colors/colors';
 import style from './style';
 import IconA from 'react-native-vector-icons/AntDesign';
-import { CustomInputView } from '../../customInputView';
-import { DatePickers } from '../../datePicker';
-import { RadioButtonGroup } from '../../radioButtonGroup';
-
+import { CustomInputView, RadioButtonGroup, DatePickers, CustomButton } from '../../../components';
 
 interface IModal {
     visible: boolean
     onClick?: () => void;
 }
+
 export const MemberAddModal: FC<IModal> = ({ visible, onClick }) => {
 
     return (
@@ -23,10 +20,10 @@ export const MemberAddModal: FC<IModal> = ({ visible, onClick }) => {
             isVisible={visible}
             onBackdropPress={onClick}>
             <View style={style.container}>
-                <IconI
-                    name="close-sharp"
+                <IconA
+                    name="close"
                     color={colors.black}
-                    size={24}
+                    size={22}
                     style={style.closeIcon}
                     onPress={onClick}
                 />
@@ -42,9 +39,12 @@ export const MemberAddModal: FC<IModal> = ({ visible, onClick }) => {
                 </View>
                 <CustomInputView title='Name:' />
                 <CustomInputView title='Genus:' />
+                <CustomInputView title='Age Status:' />
                 <DatePickers />
                 <RadioButtonGroup />
-
+                <View style={style.butonView}>
+                    <CustomButton title='Add' />
+                </View>
             </View>
         </Modal>
     )
