@@ -7,6 +7,7 @@ import colors from '../../../assets/colors/colors';
 import style from './style';
 import IconA from 'react-native-vector-icons/AntDesign';
 import { CustomInputView } from '../../customInputView';
+import { DatePickers } from '../../datePicker';
 
 
 
@@ -41,6 +42,7 @@ export const MemberAddModal: FC<IModal> = ({ visible, onClick }) => {
                 </View>
                 <CustomInputView title='Name:' />
                 <CustomInputView title='Genus:' />
+                <DatePickers />
 
 
             </View>

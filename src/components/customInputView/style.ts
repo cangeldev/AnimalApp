@@ -3,7 +3,6 @@ import colors from "../../assets/colors/colors"
 
 export default StyleSheet.create({
     container: {
-
         marginHorizontal: 20,
         marginTop: 10
     },
@@ -17,10 +16,6 @@ export default StyleSheet.create({
         backgroundColor: colors.txtInputBackGround,
         marginTop: 3,
         borderRadius: 10,
-        
         color: colors.black
-
     },
-
-
 })
