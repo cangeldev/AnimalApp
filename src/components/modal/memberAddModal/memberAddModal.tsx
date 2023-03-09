@@ -8,7 +8,7 @@ import style from './style';
 import IconA from 'react-native-vector-icons/AntDesign';
 import { CustomInputView } from '../../customInputView';
 import { DatePickers } from '../../datePicker';
-
+import { RadioButtonGroup } from '../../radioButtonGroup';
 
 
 interface IModal {
@@ -43,7 +43,7 @@ export const MemberAddModal: FC<IModal> = ({ visible, onClick }) => {
                 <CustomInputView title='Name:' />
                 <CustomInputView title='Genus:' />
                 <DatePickers />
-
+                <RadioButtonGroup />
 
             </View>
         </Modal>

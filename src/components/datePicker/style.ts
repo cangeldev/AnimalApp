@@ -21,8 +21,7 @@ export default StyleSheet.create({
         fontFamily: "OpenSans-Regular",
     },
     icon: {
-        position: "absolute",
-        right: 10,
+        marginLeft:10,
         color: colors.headerBackground
     }
 })
