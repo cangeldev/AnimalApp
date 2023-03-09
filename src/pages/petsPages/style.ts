@@ -7,4 +7,15 @@ export default StyleSheet.create({
         backgroundColor: colors.white,
         paddingBottom: 15
     },
+    addPost: {
+        backgroundColor: colors.headerBackground,
+        width: 60,
+        height: 60,
+        textAlign: "center",
+        textAlignVertical: "center",
+        borderRadius: 30,
+        position: 'absolute',
+        bottom: 14,
+        right: 14
+    }
 })
