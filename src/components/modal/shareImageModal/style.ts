@@ -14,47 +14,24 @@ export default StyleSheet.create({
         fontFamily: "OpenSans-Bold",
         color: colors.black
     },
-    innerContainer: {
-        alignItems: "center",
-        alignSelf: "flex-start",
-        marginTop: 10,
-        marginLeft: 15
+    selectImageView: {
+        flexDirection: "row"
     },
-    imageView:
-    {
+    imageView: {
         top: 25,
         position: "absolute",
-        right: 170
-    },
-    galleryImageView: {
-        width: 60,
-        height: 60,
-        borderRadius: 30,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: colors.headerBackground
-    },
-    galleryImage: {
-        width: 30,
-        height: 30,
-        tintColor: colors.white
+        right: 135,
+        width: 70,
+        height: 70,
+        borderRadius: 50,
     },
     image: {
         width: 70,
         height: 70,
         borderRadius: 50,
         borderWidth: 4,
-        borderColor: colors.txtInputBackGround
-    },
-    icon: {
-        position: "absolute",
-        right: 0,
-        bottom: 0,
-        color: colors.white,
-        fontSize: 13,
-        backgroundColor: colors.orange,
-        padding: 7,
-        borderRadius: 20
+        borderColor: colors.txtInputBackGround,
+        resizeMode: "center"
     },
     closeIcon: {
         position: "absolute",

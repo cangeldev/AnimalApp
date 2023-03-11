@@ -13,4 +13,5 @@ export const BackShape = require("./images/backShape.png");
 export const PawSelected = require("./images/pawSelected.png");
 export const Paw = require("./images/paw.png");
 export const ImageGallery = require("./images/imageGallery.png");
+export const Camera = require("./images/camera.png");
 

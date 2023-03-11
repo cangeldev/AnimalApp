@@ -1,11 +1,11 @@
-import { View, Image } from 'react-native'
+import { View, Image, TouchableOpacity } from 'react-native'
 import React, { FC } from 'react'
 import Modal from "react-native-modal";
-import { Cat } from '../../../assets';
 import colors from '../../../assets/colors/colors';
 import style from './style';
 import IconA from 'react-native-vector-icons/AntDesign';
 import { CustomInputView, RadioButtonGroupGender, DatePickers, CustomButton, RadioButtonGroupWeight } from '../../../components';
+import { launchImageLibrary } from 'react-native-image-picker';
 
 interface IModal {
     visible: boolean
@@ -14,6 +14,14 @@ interface IModal {
 
 export const MemberAddModal: FC<IModal> = ({ visible, onClick }) => {
 
+    const [response, setResponse] = React.useState<any>(null);
+    const openGalery = () => {
+        launchImageLibrary({
+            selectionLimit: 0,
+            mediaType: 'photo',
+            includeBase64: false,
+        }, setResponse)
+    }
     return (
         <Modal
             style={style.modal}
@@ -27,16 +35,24 @@ export const MemberAddModal: FC<IModal> = ({ visible, onClick }) => {
                     style={style.closeIcon}
                     onPress={onClick}
                 />
-                <View style={style.imageView}>
-                    <Image
-                        source={Cat}
-                        style={style.image}
-                    />
+                <TouchableOpacity
+                    style={style.imageView}
+                    onPress={openGalery}
+                >
+                    {response?.assets &&
+                        response?.assets.map(({ uri }: any) => (
+                            <View key={uri}>
+                                <Image
+                                    style={style.image}
+                                    source={{ uri: uri }}
+                                />
+                            </View>
+                        ))}
                     <IconA
                         name="camera"
                         style={style.icon}
                     />
-                </View>
+                </TouchableOpacity>
                 <CustomInputView title='Name:' />
                 <CustomInputView title='Genus:' />
                 <CustomInputView title='Age Status:' />

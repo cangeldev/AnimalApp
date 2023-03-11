@@ -1,18 +1,26 @@
 import { View, Text, Image } from 'react-native'
-import React, { useState, FC } from 'react'
+import React, { FC } from 'react'
 import IconI from 'react-native-vector-icons/Ionicons';
-import IconA from 'react-native-vector-icons/Entypo';
 import Modal from "react-native-modal";
-import { Cat, ImageGallery } from '../../../assets';
+import { Camera, ImageGallery } from '../../../assets';
 import colors from '../../../assets/colors/colors';
 import style from './style';
-
+import { CustomImageButton } from '../../customImageButton';
+import { launchImageLibrary } from 'react-native-image-picker';
 interface IModal {
     visible: boolean
     onClick?: () => void;
 }
-export const ShareImageModal: FC<IModal> = ({ visible, onClick }) => {
 
+export const ShareImageModal: FC<IModal> = ({ visible, onClick }) => {
+    const [response, setResponse] = React.useState<any>(null);
+    const openGalery = () => {
+        launchImageLibrary({
+            selectionLimit: 0,
+            mediaType: 'photo',
+            includeBase64: false,
+        }, setResponse)
+    }
     return (
         <Modal
             style={style.container}
@@ -29,26 +37,28 @@ export const ShareImageModal: FC<IModal> = ({ visible, onClick }) => {
                 <Text style={style.text}>
                     Paylaşmak istediğiniz resmi seçiniz:
                 </Text>
-                <View style={style.innerContainer}>
-                    <View style={style.galleryImageView}>
-                        <Image
-                            source={ImageGallery}
-                            style={style.galleryImage}
-                        />
-                    </View>
-                    <Text style={{ color: colors.black }}>
-                        Gallery
-                    </Text>
+                <View style={style.selectImageView}>
+                    <CustomImageButton
+                        title='Galery'
+                        backImage={ImageGallery}
+                        onClick={openGalery}
+                    />
+                    <CustomImageButton
+                        title='Camera'
+                        backImage={Camera}
+                        onClick={openGalery}
+                    />
                 </View>
                 <View style={style.imageView}>
-                    <Image
-                        source={Cat}
-                        style={style.image}
-                    />
-                    <IconA
-                        name="check"
-                        style={style.icon}
-                    />
+                    {response?.assets &&
+                        response?.assets.map(({ uri }: any) => (
+                            <View key={uri}>
+                                <Image
+                                    style={style.image}
+                                    source={{ uri: uri }}
+                                />
+                            </View>
+                        ))}
                 </View>
                 <Text style={style.button}>
                     Share

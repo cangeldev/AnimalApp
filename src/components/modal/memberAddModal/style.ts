@@ -13,19 +13,26 @@ export default StyleSheet.create({
     closeIcon: {
         position: "absolute",
         right: 10,
-
     },
     imageView:
     {
         marginTop: 15,
         alignSelf: "center",
+        width: 100,
+        height: 100,
+        borderRadius: 50,
+        borderWidth: 4,
+        borderColor: colors.txtInputBackGround,
+        alignItems: "center",
+        justifyContent: "center"
     },
     image: {
         width: 100,
         height: 100,
         borderRadius: 50,
         borderWidth: 4,
-        borderColor: colors.txtInputBackGround
+        borderColor: colors.txtInputBackGround,
+        resizeMode: "center"
     },
     icon: {
         position: "absolute",
