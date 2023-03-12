@@ -8,20 +8,25 @@ import style from '../loginPages/style';
 import styles from './style';
 import Lottie from 'lottie-react-native';
 import { useNavigation } from '@react-navigation/native';
-import auth from '@react-native-firebase/auth';
-
+import { handleCreated } from '../../../firebase';
 export const SigninPages = () => {
+
+    const Paws = PawsLottie
+    const navigation = useNavigation<any>();
     const [mail, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const [checkPassword, setcheckPassword] = useState<string>('');
+
     const handleEmailChange = (inputText: string) => {
         setEmail(inputText);
-
     };
     const handlePasswordChange = (inputText: string) => {
         setPassword(inputText);
     };
-    const Paws = PawsLottie
-    const navigation = useNavigation<any>();
+    const handleCheckPasswordChange = (inputText: string) => {
+        setcheckPassword(inputText);
+    };
+
 
     return (
         <View style={style.container}>
@@ -83,10 +88,11 @@ export const SigninPages = () => {
             <CustomTxtInput
                 secureText={true}
                 placeHolder='******'
-                changeText={handlePasswordChange}
+                changeText={handleCheckPasswordChange}
             />
             <CustomButton
                 title='Register Now'
+                onClick={() => { handleCreated(mail, password, checkPassword) }}
             />
             <View style={styles.linkView}>
                 <Text style={style.linkText}>
