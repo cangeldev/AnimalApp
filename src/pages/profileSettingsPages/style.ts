@@ -11,7 +11,14 @@ export default StyleSheet.create({
         margin: 20,
         marginBottom: 10,
         marginTop: 30,
-        alignSelf: "flex-start"
+        alignSelf: "flex-start",
+        width: 90,
+        height: 90,
+        borderRadius: 50,
+        borderWidth: 4,
+        borderColor: colors.txtInputBackGround,
+        justifyContent: "center",
+        alignItems: "center",
     },
     profileImage: {
         width: 90,
@@ -19,6 +26,7 @@ export default StyleSheet.create({
         borderRadius: 50,
         borderWidth: 4,
         borderColor: colors.txtInputBackGround,
+        resizeMode: "center"
     },
     petsImage: {
         width: 40,

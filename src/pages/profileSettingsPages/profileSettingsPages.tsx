@@ -1,27 +1,44 @@
-import { View, Image, Text } from 'react-native'
+import { View, Image, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import style from './style'
 import IconA from 'react-native-vector-icons/Entypo';
 import { Cat } from '../../assets';
 import { ProfileSettingsPageCard } from '../../components/cards';
 import { DatePickers, RadioButtonGroupGender } from '../../components';
+import { launchImageLibrary } from 'react-native-image-picker';
 
 export const ProfileSettingsPages = () => {
+    const [response, setResponse] = React.useState<any>(null);
+    const openGalery = () => {
+        launchImageLibrary({
+            selectionLimit: 0,
+            mediaType: 'photo',
+            includeBase64: false,
+        }, setResponse)
+    }
+
     return (
         <View style={style.container}>
             <View style={style.innerContainer}>
 
-                <View style={style.imageView}>
-                    <Image
-                        source={Cat}
-                        style={style.profileImage}
-                    />
+                <TouchableOpacity
+                    style={style.imageView}
+                    onPress={openGalery}
+                >
+                    {response?.assets &&
+                        response?.assets.map(({ uri }: any) => (
+                            <View key={uri}>
+                                <Image
+                                    style={style.profileImage}
+                                    source={{ uri: uri }}
+                                />
+                            </View>
+                        ))}
                     <IconA
                         name="camera"
                         style={style.ImageChangeIcon}
-                        onPress={() => console.log("first")}
                     />
-                </View>
+                </TouchableOpacity>
                 <View style={style.petsView}>
                     <Text style={style.petsViewTitle}>
                         My Pets
