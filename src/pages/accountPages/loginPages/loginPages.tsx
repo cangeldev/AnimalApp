@@ -1,5 +1,5 @@
 import { View, Text, Image, StatusBar, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import style from './style'
 import { useNavigation } from '@react-navigation/native';
 import Lottie from 'lottie-react-native';
@@ -14,6 +14,15 @@ import { TabNavigator } from '../../../navigation';
 export const LoginPages = () => {
     const Paws = PawsLottie
     const navigation = useNavigation<any>();
+    const [mail, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const handleEmailChange = (inputText: string) => {
+        setEmail(inputText);
+
+    };
+    const handlePasswordChange = (inputText: string) => {
+        setPassword(inputText);
+    };
     return (
         <View style={style.container}>
             <StatusBar
@@ -47,6 +56,7 @@ export const LoginPages = () => {
             </Text>
             <CustomTxtInput
                 placeHolder='john.doe@example.com'
+                changeText={handleEmailChange}
             />
             <Text style={style.inputTitle}>
                 Password:
@@ -54,6 +64,7 @@ export const LoginPages = () => {
             <CustomTxtInput
                 secureText={true}
                 placeHolder='******'
+                changeText={handlePasswordChange}
             />
             <CustomButton
                 title='Login'

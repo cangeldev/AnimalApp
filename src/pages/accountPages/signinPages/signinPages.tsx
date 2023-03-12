@@ -1,5 +1,5 @@
-import { View, Text, StatusBar, Image,TouchableOpacity } from 'react-native'
-import React from 'react'
+import { View, Text, StatusBar, Image, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react'
 import { BackgroundPaw, PawsLottie } from '../../../assets'
 import IconA from 'react-native-vector-icons/AntDesign';
 import colors from '../../../assets/colors/colors';
@@ -8,10 +8,21 @@ import style from '../loginPages/style';
 import styles from './style';
 import Lottie from 'lottie-react-native';
 import { useNavigation } from '@react-navigation/native';
+import auth from '@react-native-firebase/auth';
 
 export const SigninPages = () => {
+    const [mail, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const handleEmailChange = (inputText: string) => {
+        setEmail(inputText);
+
+    };
+    const handlePasswordChange = (inputText: string) => {
+        setPassword(inputText);
+    };
     const Paws = PawsLottie
     const navigation = useNavigation<any>();
+
     return (
         <View style={style.container}>
             <StatusBar
@@ -56,6 +67,7 @@ export const SigninPages = () => {
             </Text>
             <CustomTxtInput
                 placeHolder='john.doe@example.com'
+                changeText={handleEmailChange}
             />
             <Text style={style.inputTitle}>
                 Password:
@@ -63,6 +75,7 @@ export const SigninPages = () => {
             <CustomTxtInput
                 secureText={true}
                 placeHolder='******'
+                changeText={handlePasswordChange}
             />
             <Text style={style.inputTitle}>
                 Confirm Password:
@@ -70,6 +83,7 @@ export const SigninPages = () => {
             <CustomTxtInput
                 secureText={true}
                 placeHolder='******'
+                changeText={handlePasswordChange}
             />
             <CustomButton
                 title='Register Now'
@@ -78,7 +92,8 @@ export const SigninPages = () => {
                 <Text style={style.linkText}>
                     Already have an account ?
                 </Text>
-                <Text style={style.linkRegister} onPress={() => navigation.navigate("LoginPages")}>
+                <Text style={style.linkRegister}
+                    onPress={() => navigation.navigate("LoginPages")}>
                     Login
                 </Text>
             </View>
