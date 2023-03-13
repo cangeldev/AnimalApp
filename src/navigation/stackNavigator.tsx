@@ -4,8 +4,9 @@ import { LoginPages, ProfilePages, ProfileSettingsPages, SigninPages, SplashScre
 import { TabNavigator } from './tabNavigator'
 import colors from '../assets/colors/colors'
 import IconE from 'react-native-vector-icons/Ionicons';
+import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native'
-
+import { handleSignOut } from '../firebase'
 const Stack = createNativeStackNavigator()
 export const StackNavigator = () => {
     return (
@@ -72,6 +73,16 @@ export function ProfileStackNavigator() {
                             color={colors.white}
                             size={24}
                             onPress={() => navigation.navigate("ProfilePages")}
+                        />),
+                    headerRight: () => (
+                        <IconM
+                            name="logout"
+                            color={colors.white}
+                            size={24}
+                            onPress={() => {
+                                handleSignOut()
+                                navigation.navigate("SplashScreen")
+                            }}
                         />)
                 }}
             />

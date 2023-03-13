@@ -33,3 +33,8 @@ export const handleLogin = (mail: string, password: string, navigation: any): vo
             console.log(err)
         })
 }
+export const handleSignOut = (): void => {
+    auth()
+        .signOut()
+        .then(() => console.log('User signed out!'));
+}
