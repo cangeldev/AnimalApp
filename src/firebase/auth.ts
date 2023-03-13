@@ -18,3 +18,18 @@ export const handleCreated = (mail: string, password: string, checkPassword: str
             console.log(err.code);
         });
 }
+
+export const handleLogin = (mail: string, password: string, navigation: any): void => {
+
+    if (!mail || !password) {
+        console.log("Email veya şifre boş geçilemez!")
+        return;
+    }
+    auth().signInWithEmailAndPassword(mail, password)
+        .then(() => {
+            navigation.navigate("TabNavigator")
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+}

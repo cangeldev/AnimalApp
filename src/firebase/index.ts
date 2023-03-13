@@ -1,1 +1,1 @@
-export { handleCreated } from "./auth"
+export { handleCreated, handleLogin } from "./auth"

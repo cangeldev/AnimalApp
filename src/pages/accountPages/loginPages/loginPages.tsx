@@ -9,8 +9,7 @@ import { AnotherLoginList } from '../../../utils/helper'
 import { BackgroundPaw, PawsLottie } from '../../../assets'
 import IconA from 'react-native-vector-icons/AntDesign';
 import colors from '../../../assets/colors/colors'
-import { TabNavigator } from '../../../navigation';
-
+import { handleLogin } from '../../../firebase';
 export const LoginPages = () => {
     const Paws = PawsLottie
     const navigation = useNavigation<any>();
@@ -18,7 +17,6 @@ export const LoginPages = () => {
     const [password, setPassword] = useState<string>('');
     const handleEmailChange = (inputText: string) => {
         setEmail(inputText);
-
     };
     const handlePasswordChange = (inputText: string) => {
         setPassword(inputText);
@@ -28,7 +26,7 @@ export const LoginPages = () => {
             <StatusBar
                 translucent
                 backgroundColor={"transparent"}
-                barStyle={"dark-content"}
+                barStyle={"light-content"}
             />
             <Image
                 source={BackgroundPaw}
@@ -68,7 +66,7 @@ export const LoginPages = () => {
             />
             <CustomButton
                 title='Login'
-                onClick={() => navigation.navigate(TabNavigator)}
+                onClick={() => handleLogin(mail, password, navigation)}
             />
             <Text style={style.forgotPassword}>
                 Forgot Password ?
@@ -76,7 +74,8 @@ export const LoginPages = () => {
             <Divider />
             <View style={style.anotherLoginView}>
                 {
-                    AnotherLoginList.map((item) => <AnotherLoginCard key={item.id} list={item.value} />)
+                    AnotherLoginList.map((item) =>
+                        <AnotherLoginCard key={item.id} list={item.value} />)
                 }
             </View>
             <View style={style.linkView}>

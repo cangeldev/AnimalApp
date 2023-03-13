@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator()
 export const StackNavigator = () => {
     return (
         <Stack.Navigator
-            initialRouteName='SigninPages'
+            initialRouteName='SplashScreen'
             screenOptions={{ headerShown: false }}>
             <Stack.Screen
                 name='SplashScreen'
