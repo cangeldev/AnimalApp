@@ -14,7 +14,7 @@ export default StyleSheet.create({
     },
     title: {
         fontFamily: "HoboStd",
-        color: "#f99935",
+        color: colors.orange,
         fontSize: 65,
         marginTop: -20,
         marginLeft: 45,

@@ -4,8 +4,9 @@ import style from './style'
 import IconA from 'react-native-vector-icons/Entypo';
 import { Cat } from '../../assets';
 import { ProfileSettingsPageCard } from '../../components/cards';
-import { DatePickers, RadioButtonGroupGender } from '../../components';
+import { DatePickers, RadioButtonGroup } from '../../components';
 import { launchImageLibrary } from 'react-native-image-picker';
+import { RadioGroupGenderList } from '../../utils/helper';
 
 export const ProfileSettingsPages = () => {
     const [response, setResponse] = React.useState<any>(null);
@@ -69,7 +70,10 @@ export const ProfileSettingsPages = () => {
             <View style={style.dateView}>
                 <DatePickers />
             </View>
-            <RadioButtonGroupGender />
+            <RadioButtonGroup
+                list={RadioGroupGenderList}
+                name={"Gender:"}
+            />
             <ProfileSettingsPageCard
                 title='Telephone'
                 value='+90 0500 123 23 11'

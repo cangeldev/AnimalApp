@@ -4,8 +4,9 @@ import Modal from "react-native-modal";
 import colors from '../../../assets/colors/colors';
 import style from './style';
 import IconA from 'react-native-vector-icons/AntDesign';
-import { CustomInputView, RadioButtonGroupGender, DatePickers, CustomButton, RadioButtonGroupWeight } from '../../../components';
+import { CustomInputView, DatePickers, CustomButton, RadioButtonGroup } from '../../../components';
 import { launchImageLibrary } from 'react-native-image-picker';
+import { RadioGroupGenderList, RadioGroupWeightList } from '../../../utils/helper';
 
 interface IModal {
     visible: boolean
@@ -57,8 +58,14 @@ export const MemberAddModal: FC<IModal> = ({ visible, onClick }) => {
                 <CustomInputView title='Genus:' />
                 <CustomInputView title='Age Status:' />
                 <DatePickers />
-                <RadioButtonGroupGender />
-                <RadioButtonGroupWeight />
+                <RadioButtonGroup
+                    list={RadioGroupGenderList}
+                    name="Gender:"
+                />
+                <RadioButtonGroup
+                    list={RadioGroupWeightList}
+                    name="Weight: "
+                />
                 <View style={style.butonView}>
                     <CustomButton title='Add' />
                 </View>

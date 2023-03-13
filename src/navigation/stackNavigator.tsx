@@ -8,6 +8,7 @@ import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native'
 import { handleSignOut } from '../firebase'
 import auth from '@react-native-firebase/auth';
+
 const Stack = createNativeStackNavigator()
 export const StackNavigator = () => {
     const user = auth().currentUser;

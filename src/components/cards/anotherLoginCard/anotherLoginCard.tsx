@@ -10,7 +10,7 @@ export const AnotherLoginCard: FC<ILoginCard> = ({ list }) => {
     return (
         <View style={style.view}>
             <Image
-                source={list}
+                source={list as any}
                 style={style.image} />
         </View>
     )

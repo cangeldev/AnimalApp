@@ -15,7 +15,7 @@ export const CustomButton: FC<ICustomButton> = ({ title, theme, onClick }) => {
             activeOpacity={0.6}
             onPress={onClick}>
             <Text
-                style={[style.text, style[`${theme}`]]}>
+                style={[style.text, style[theme as keyof typeof style]]}>
                 {title}
             </Text>
         </TouchableOpacity>

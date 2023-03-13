@@ -27,7 +27,6 @@ export const SigninPages = () => {
         setcheckPassword(inputText);
     };
 
-
     return (
         <View style={style.container}>
             <StatusBar

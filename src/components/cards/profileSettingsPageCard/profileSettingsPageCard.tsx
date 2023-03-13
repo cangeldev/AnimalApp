@@ -18,7 +18,9 @@ export const ProfileSettingsPageCard: FC<ISettingsCard> = ({ title, placeholder,
                 style={style.txtInput}
                 placeholder={placeholder}
             />
-            <Text style={style.title}>{title}</Text>
+            <Text style={style.title}>
+                {title}
+            </Text>
             <IconE
                 name="chevron-right"
                 color={colors.headerBackground}
