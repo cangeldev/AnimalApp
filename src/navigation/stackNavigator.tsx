@@ -7,11 +7,13 @@ import IconE from 'react-native-vector-icons/Ionicons';
 import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native'
 import { handleSignOut } from '../firebase'
+import auth from '@react-native-firebase/auth';
 const Stack = createNativeStackNavigator()
 export const StackNavigator = () => {
+    const user = auth().currentUser;
     return (
         <Stack.Navigator
-            initialRouteName='SplashScreen'
+            initialRouteName={!user ? 'SplashScreen' : "TabNavigator"}
             screenOptions={{ headerShown: false }}>
             <Stack.Screen
                 name='SplashScreen'

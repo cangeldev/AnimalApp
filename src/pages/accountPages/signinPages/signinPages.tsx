@@ -92,7 +92,7 @@ export const SigninPages = () => {
             />
             <CustomButton
                 title='Register Now'
-                onClick={() => { handleCreated(mail, password, checkPassword) }}
+                onClick={() => { handleCreated(mail, password, checkPassword, navigation) }}
             />
             <View style={styles.linkView}>
                 <Text style={style.linkText}>

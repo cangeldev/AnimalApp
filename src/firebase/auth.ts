@@ -1,6 +1,6 @@
 import auth from '@react-native-firebase/auth';
 
-export const handleCreated = (mail: string, password: string, checkPassword: string): void => {
+export const handleCreated = (mail: string, password: string, checkPassword: string, navigation: any): void => {
     if (!mail || !password) {
         console.log("Email veya şifre boş geçilemez!");
         return;
@@ -12,6 +12,7 @@ export const handleCreated = (mail: string, password: string, checkPassword: str
     auth().createUserWithEmailAndPassword(mail, password)
         .then(() => {
             console.log("Kaydınız Başarıyla oluşturuldu.");
+            navigation.navigate("LoginPages")
             auth().signOut();
         })
         .catch((err) => {
@@ -33,6 +34,7 @@ export const handleLogin = (mail: string, password: string, navigation: any): vo
             console.log(err)
         })
 }
+
 export const handleSignOut = (): void => {
     auth()
         .signOut()

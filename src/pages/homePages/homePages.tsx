@@ -1,5 +1,5 @@
-import { View, StatusBar, ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import { View, StatusBar, ScrollView, BackHandler } from 'react-native'
+import React, { useState, useEffect } from 'react'
 import style from './style'
 import IconF from 'react-native-vector-icons/FontAwesome';
 import colors from '../../assets/colors/colors';
@@ -8,6 +8,10 @@ import { ShareImageModal } from '../../components/modal';
 
 export const HomePages = () => {
     const [ModalVisible, setModalVisible] = useState(false)
+    useEffect(() => {
+        BackHandler.addEventListener('hardwareBackPress', () => true);
+    }, []);
+
     const toggleModal = () => {
         setModalVisible(!ModalVisible);
     };
